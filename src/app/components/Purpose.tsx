@@ -59,7 +59,7 @@ function Purpose(props:propsInterface) {
         <TimelineContent as="div" animationNum={2} timelineRef={heroRef}
           variants={revealVariants}
         >
-          <a href="https://www.linkedin.com/company/skip-n-begin/" target="_blank"  className="text-2xl px-6 py-2 bg-gray-900 text-white rounded-md inline-flex items-center hover:bg-gray-800 transition-colors">
+          <a href="https://airtable.com/appQuZw3q1qXjgDNl/shrKsEknGv3shtR1x" target="_blank"  className="text-2xl px-6 py-2 bg-gray-900 text-white rounded-md inline-flex items-center hover:bg-gray-800 transition-colors">
             Get started <ArrowRight className="ml-2 h-4 w-4" />
           </a>
         </TimelineContent>
