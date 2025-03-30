@@ -4,30 +4,9 @@ import { useRef } from "react";
 import { TimelineContent } from "@/app/components/framer-timeline";
 
 import type { Variants } from "motion/react";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
-const timelineItems = [
-  {
-    year: "2020",
-    title: "Project Inception",
-    description: "The beginning of our journey.",
-  },
-  {
-    year: "2021",
-    title: "First Milestone",
-    description: "Reached our first major goal.",
-  },
-  {
-    year: "2022",
-    title: "Global Expansion",
-    description: "Extended our reach worldwide.",
-  },
-  {
-    year: "2023",
-    title: "Innovation Award",
-    description: "Recognized for our contributions.",
-  },
-];
+
 interface propsInterface {
   Text1: string | null;
   Text2: string | null;
