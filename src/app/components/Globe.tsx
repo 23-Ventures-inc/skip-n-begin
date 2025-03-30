@@ -1,7 +1,8 @@
-'use client';
-import React, { useEffect, useRef } from 'react';
-import createGlobe from 'cobe';
-import { cn } from '../../../lib/utils';
+"use client";
+import React, { useEffect, useRef } from "react";
+import createGlobe from "cobe";
+import { cn } from "../../../lib/utils";
+
 interface EarthProps {
   className?: string;
   theta?: number;
@@ -14,6 +15,8 @@ interface EarthProps {
   markerColor?: [number, number, number];
   glowColor?: [number, number, number];
 }
+
+
 const Earth: React.FC<EarthProps> = ({
   className,
   theta = 0.25,
@@ -32,57 +35,64 @@ const Earth: React.FC<EarthProps> = ({
     let width = 0;
     const onResize = () =>
       canvasRef.current && (width = canvasRef.current.offsetWidth);
-    window.addEventListener('resize', onResize);
+    window.addEventListener("resize", onResize);
     onResize();
     let phi = 0;
 
-    onResize();
     const globe = createGlobe(canvasRef.current!, {
       devicePixelRatio: 2,
       width: width * 2,
       height: width * 2,
       phi: 0,
-      theta: theta,
-      dark: dark,
-      scale: scale,
-      diffuse: diffuse,
-      mapSamples: mapSamples,
-      mapBrightness: mapBrightness,
-      baseColor: baseColor,
-      markerColor: markerColor,
-      glowColor: glowColor,
+      theta,
+      dark,
+      scale,
+      diffuse,
+      mapSamples,
+      mapBrightness,
+      baseColor,
+      markerColor,
+      glowColor,
       opacity: 1,
       offset: [0, 0],
-      markers: [
-        // longitude latitude
-      ],
+      markers: [],
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       onRender: (state: Record<string, any>) => {
-        // Called on every animation frame.
-        // `state` will be an empty object, return updated params.\
         state.phi = phi;
         phi += 0.003;
-      },
+      }
     });
 
     return () => {
       globe.destroy();
+      window.removeEventListener("resize", onResize);
     };
-  }, []);
+  }, [
+    theta,
+    dark,
+    scale,
+    diffuse,
+    mapSamples,
+    mapBrightness,
+    baseColor,
+    markerColor,
+    glowColor,
+  ]);
 
   return (
     <div
       className={cn(
-        'flex items-center justify-center z-[10] w-full max-w-[350px] mx-auto',
+        "flex items-center justify-center z-[10] w-full max-w-[350px] mx-auto",
         className
       )}
     >
       <canvas
         ref={canvasRef}
         style={{
-          width: '100%',
-          height: '100%',
-          maxWidth: '100%',
-          aspectRatio: '1',
+          width: "100%",
+          height: "100%",
+          maxWidth: "100%",
+          aspectRatio: "1",
         }}
       />
     </div>
