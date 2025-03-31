@@ -7,7 +7,7 @@ function GlobeBox() {
       <div className='overflow-hidden'>
         <article className='max-w-full mx-auto p-3 text-center relative'>
           <div className='relative z-10'>
-            <h1 className='text-4xl md:text-7xl font-semibold text-blue-300 opacity-70'>
+            <h1 className='text-4xl md:text-7xl font-semibold bg-gradient-to-b from-[#edeffd] to-[#06152e] bg-clip-text text-transparent leading-[100%] tracking-tighter'>
               Skip-n-Begin
             </h1>
             <Earth />
