@@ -55,7 +55,7 @@ function FAQ() {
             }`}
           >
             <button
-              className='p-3 px-2 w-full cursor-pointer sm:text-base text-xs items-center transition-all font-semibold flex gap-2'
+              className='p-3 px-2 w-full cursor-pointer sm:text-base text-[0.6rem] whitespace-nowrap items-center transition-all font-semibold flex gap-2'
               onClick={() => handleClick(index)}
             >
               <Plus
