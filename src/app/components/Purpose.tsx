@@ -1,18 +1,18 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import {TimelineContent} from '@/app/components/framer-timeline'
+import { useRef } from "react";
+import { TimelineContent } from "@/app/components/framer-timeline";
 
-import type { Variants } from "motion/react"
-import { ArrowRight } from "lucide-react"
+import type { Variants } from "motion/react";
+import { ArrowRight } from "lucide-react";
 
-interface propsInterface{
-  Text1:string |null;
-  Text2:string |null;
+interface propsInterface {
+  Text1: string | null;
+  Text2: string | null;
 }
 
-function Purpose(props:propsInterface) {
-  const heroRef = useRef(null)
+function Purpose(props: propsInterface) {
+  const heroRef = useRef(null);
 
   // Subtle reveal animation
   const revealVariants: Variants = {
@@ -29,12 +29,15 @@ function Purpose(props:propsInterface) {
       opacity: 0,
       y: 15,
     },
-  }
+  };
 
   return (
     <>
       {/* First section - Hero */}
-      <section ref={heroRef} className="px-4 max-w-5xl  mx-auto my-10 flex flex-col justify-center items-center text-center">
+      <section
+        ref={heroRef}
+        className="px-4 max-w-5xl  mx-auto my-10 flex flex-col justify-center items-center text-center"
+      >
         <TimelineContent
           as="h1"
           animationNum={0}
@@ -50,24 +53,28 @@ function Purpose(props:propsInterface) {
           animationNum={1}
           timelineRef={heroRef}
           variants={revealVariants}
-
           className="text-gray-600 mb-8 max-w-xl"
         >
           {props.Text2}
         </TimelineContent>
 
-        <TimelineContent as="div" animationNum={2} timelineRef={heroRef}
+        <TimelineContent
+          as="div"
+          animationNum={2}
+          timelineRef={heroRef}
           variants={revealVariants}
         >
-          <a href="https://airtable.com/appQuZw3q1qXjgDNl/shrKsEknGv3shtR1x" target="_blank"  className="text-2xl px-6 py-2 bg-gray-900 text-white rounded-md inline-flex items-center hover:bg-gray-800 transition-colors">
+          <a
+            href="https://deformity.ai/d/i0kqJ1aJmIVe"
+            target="_blank"
+            className="text-2xl px-6 py-2 bg-gray-900 text-white rounded-md inline-flex items-center hover:bg-gray-800 transition-colors"
+          >
             Get started <ArrowRight className="ml-2 h-4 w-4" />
           </a>
         </TimelineContent>
       </section>
-
     </>
-  )
+  );
 }
 
-export default Purpose
-
+export default Purpose;
